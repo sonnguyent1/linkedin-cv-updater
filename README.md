@@ -70,7 +70,12 @@ Add the server to your IDE's MCP Configuration file (`mcp_config.json`):
 }
 ```
 
-Once you restart your IDE, the server will launch seamlessly in the background and its tools will be available to your Agent!
+### Step 4: Trigger Your IDE Agent
+Once configured and restarted, paste this highly-efficient prompt into your IDE agent to trigger the entire end-to-end flow autonomously:
+
+> *"Act as my career manager. Analyze this repository using the `extract_company_name` and `extract_project_highlights` prompts to gather the organization name and metric-driven achievements. Then, use `get_linkedin_about` to fetch my current bio, and use `format_linkedin_content` to synthesize everything into a cohesive, professional format. Finally, push the updates live using `update_linkedin_experience` and `update_linkedin_about`."*
+
+Once you run this, sit back and watch the browser automate the updates!
 
 ## 🧠 Features & Prompts
 
