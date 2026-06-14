@@ -71,11 +71,11 @@ Add the server to your IDE's MCP Configuration file (`mcp_config.json`):
 ```
 
 ### Step 4: Trigger Your IDE Agent
-Once configured and restarted, paste this highly-efficient prompt into your IDE agent to trigger the entire end-to-end flow autonomously:
+Once configured and restarted, paste this simple, natural language prompt into your IDE agent to trigger the entire end-to-end flow autonomously:
 
-> *"Act as my career manager. Analyze this repository using the `extract_company_name` and `extract_project_highlights` prompts to gather the organization name and metric-driven achievements. Then, use `get_linkedin_about` to fetch my current bio, and use `format_linkedin_content` to synthesize everything into a cohesive, professional format. Finally, push the updates live using `update_linkedin_experience` and `update_linkedin_about`."*
+> *"Act as my career manager. Extract my technical achievements and the company name from this repository, fetch my current LinkedIn bio, and push formatted updates to both my LinkedIn Experience and About sections."*
 
-Once you run this, sit back and watch the browser automate the updates!
+Because FastMCP tools are self-describing, your Agent will automatically discover and string together all the necessary prompts and tools to complete the task. Sit back and watch the browser automate the updates!
 
 ## 🧠 Features & Prompts
 
