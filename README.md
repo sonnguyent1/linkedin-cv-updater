@@ -75,6 +75,9 @@ Once configured and restarted, paste this simple, natural language prompt into y
 
 > *"Act as my career manager. Extract my technical achievements and the company name from this repository, fetch my current LinkedIn bio, and push formatted updates to both my LinkedIn Experience and About sections."*
 
+Or even simpler:
+> *"Extract my project highlights and update my LinkedIn experience and bio."*
+
 Because FastMCP tools are self-describing, your Agent will automatically discover and string together all the necessary prompts and tools to complete the task. Sit back and watch the browser automate the updates!
 
 ## 🧠 Features & Prompts
