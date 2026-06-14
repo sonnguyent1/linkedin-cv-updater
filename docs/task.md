@@ -36,4 +36,4 @@
 - `[x]` Ticket 4.1 - Fix CLI Entry Point (Suppress Banner)
 - `[x]` Ticket 4.2 - Create Release CI/CD Pipeline
 - `[x]` Ticket 4.3 - Update Installation Documentation
-- `[/]` Ticket 4.4 - Publish v0.1.0 Release
+- `[x]` Ticket 4.4 - Publish v0.1.0 Release

@@ -30,8 +30,9 @@ def update_linkedin_experience(experience: ExperienceUpdate) -> str:
     IMPORTANT INSTRUCTIONS FOR AGENT:
     1. BEFORE calling this tool, you SHOULD analyze the user's local project or codebase to extract achievements.
     2. Consider using the `extract_project_highlights` prompt to help you synthesize technical achievements.
-    3. When generating the `description` string, ALWAYS use bullet points. 
-    4. Never use dense paragraphs. Quantify achievements with metrics where possible, and start each bullet with a strong action verb.
+    3. If the `company_name` is ambiguous or unknown, use the `extract_company_name` prompt to systematically identify the organization from the repository's metadata.
+    4. When generating the `description` string, ALWAYS use bullet points. 
+    5. Never use dense paragraphs. Quantify achievements with metrics where possible, and start each bullet with a strong action verb.
     Separate bullets with newlines.
     """
     logger.info(f"Adding experience via CDP: {experience.title} at {experience.company_name}")

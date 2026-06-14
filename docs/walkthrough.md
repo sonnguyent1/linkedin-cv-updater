@@ -82,6 +82,19 @@ We have accomplished a massive architectural shift and several feature upgrades 
    - Packaged the server into `v0.1.0`.
    - Built the final `dist/linkedin_cv_updater_mcp-0.1.0-py3-none-any.whl` wheel using `uv build`.
 
+## Sprint 4: Distribution & Public Release
+
+## Phase 3: Final Polish & Deployment
+The repository was properly linted and pushed to GitHub via automated MCP repository creation (`github-mcp-server`).
+An end-to-end dry run verified that the CDP port logic perfectly bypasses LinkedIn's bot detections by routing interactions directly into the user's active session window.
+
+## Phase 4: Distribution & Public Release
+We made the FastMCP server distributable to the wider developer ecosystem:
+1. **Entry Point Standardization**: The default FastMCP boot banner was suppressed within `mcp.run()` to prevent UI JSON-RPC corruption on IDE startup.
+2. **Global Installations**: Rewrote `README.md` to instruct standard package manager installations via `uv tool install git+https://...` or `pipx`.
+3. **Automated CI/CD Release Pipeline**: Deployed a GitHub Action that natively generates pre-compiled `.whl` and `.tar.gz` distribution binaries upon each tag push.
+4. **v0.1.0 Released**: Triggered the GitHub release for v0.1.0.
+
 ## Ad-Hoc Polish
 
 1. **Implement `get_linkedin_about` Tool** (Ticket 3.8)

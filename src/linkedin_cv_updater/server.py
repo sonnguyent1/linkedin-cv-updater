@@ -51,3 +51,25 @@ FORMATTING RULES:
 3. Output the final result as a concise, bulleted list.
 4. Each bullet point MUST start with a strong action verb.
 """
+
+@mcp.prompt()
+def extract_company_name() -> str:
+    """
+    Instructs the AI Agent to act as an expert repository auditor and identify the specific organization, client, or company name associated with the project.
+    """
+    return """
+Act as an expert repository auditor. Analyze the files in this project to identify the specific organization, client, or company name associated with it. 
+
+To maximize efficiency, prioritize scanning these high-leverage locations sequentially:
+
+1. Root Legal & Documentation: Inspect the 'LICENSE', 'NOTICE', or 'README.md' files for copyright ownership lines.
+2. Package & Dependency Configurations: Look at 'package.json' (author, repo, scoped package names), 'pom.xml' or 'build.gradle' (groupId domains), 'go.mod' (module paths), or 'pyproject.toml'.
+3. Git Metadata: Check '.git/config' or remote origin URLs, and inspect recent commit logs for contributor email domains (e.g., user@company.com).
+4. Environment & Deployment: Review '.env.example' or CI/CD workflows (.github/workflows, .gitlab-ci.yml) for specific staging subdomains, Docker registry targets, or cloud project IDs.
+5. Frontend Localization: Scan 'i18n', 'locales', or 'strings.xml' files for customer-facing text containing "Terms of Service", "Privacy Policy", or the brand name.
+
+Provide your findings in the following format:
+- Identified Organization: [Name or Best Guess]
+- Confidence Score: [Low / Medium / High]
+- Supporting Evidence: [List the exact file paths and the specific lines of text/code discovered]
+"""
