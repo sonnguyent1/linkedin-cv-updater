@@ -39,8 +39,7 @@ Because this MCP server drives your live browser, you must start Chrome with a s
 We have provided a helper script for macOS. **Make sure Chrome is completely quit first (Cmd+Q)**, then run:
 
 ```bash
-# Since this repository is currently private, run the script locally:
-./scripts/start_chrome.sh
+curl -sL https://raw.githubusercontent.com/sonnguyent1/linkedin-cv-updater/main/scripts/start_chrome.sh | bash
 ```
 
 *(This launches Chrome with `--remote-debugging-port=9222` and mounts a dedicated DevTools profile.)*
