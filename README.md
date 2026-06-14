@@ -19,14 +19,20 @@ This means:
 
 ## 📦 Installation
 
-Since this project is packaged and distributed, you can install it globally on your system using `uv` or `pipx`:
+Since this project is packaged and distributed via GitHub Actions, the fastest way to install it is using the pre-compiled release binaries (wheel files) from the Releases page.
 
+**Install the latest pre-compiled release (v0.1.1):**
+```bash
+uv tool install https://github.com/sonnguyent1/linkedin-cv-updater/releases/download/v0.1.1/linkedin_cv_updater_mcp-0.1.1-py3-none-any.whl
+```
+*or using pipx:*
+```bash
+pipx install https://github.com/sonnguyent1/linkedin-cv-updater/releases/download/v0.1.1/linkedin_cv_updater_mcp-0.1.1-py3-none-any.whl
+```
+
+**Alternatively, install directly from the repository source:**
 ```bash
 uv tool install git+https://github.com/sonnguyent1/linkedin-cv-updater.git
-```
-*or*
-```bash
-pipx install git+https://github.com/sonnguyent1/linkedin-cv-updater.git
 ```
 
 This will give you a global `linkedin-cv-updater` command.
