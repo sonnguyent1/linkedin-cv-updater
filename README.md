@@ -17,24 +17,19 @@ This means:
 - [uv](https://github.com/astral-sh/uv) (recommended)
 - Google Chrome installed (macOS)
 
-## 📦 Setup
+## 📦 Installation
 
-1. **Install dependencies:**
-   ```bash
-   uv sync
-   ```
+Since this project is packaged and distributed, you can install it globally on your system using `uv` or `pipx`:
 
-2. **Configure your LinkedIn Profile ID:**
-   Create a `.env` file (or export the variable) with your exact LinkedIn profile ID (found in your LinkedIn URL: `linkedin.com/in/<profile_id>`).
-   
-   ```env
-   LINKEDIN_PROFILE_ID=your-profile-id
-   ```
+```bash
+uv tool install git+https://github.com/sonnguyent1/linkedin-cv-updater.git
+```
+*or*
+```bash
+pipx install git+https://github.com/sonnguyent1/linkedin-cv-updater.git
+```
 
-3. **Install Playwright Browsers (just in case):**
-   ```bash
-   uv run playwright install
-   ```
+This will give you a global `linkedin-cv-updater` command.
 
 ## 🏃‍♂️ Usage Guide
 
@@ -44,36 +39,23 @@ Because this MCP server drives your live browser, you must start Chrome with a s
 We have provided a helper script for macOS. **Make sure Chrome is completely quit first (Cmd+Q)**, then run:
 
 ```bash
-./scripts/start_chrome.sh
+curl -sL https://raw.githubusercontent.com/sonnguyent1/linkedin-cv-updater/main/scripts/start_chrome.sh | bash
 ```
 
-*(This launches Chrome with `--remote-debugging-port=9222` and mounts your default user profile so you stay logged in.)*
+*(This launches Chrome with `--remote-debugging-port=9222` and mounts a dedicated DevTools profile.)*
 
 ### Step 2: Log into LinkedIn
 In the newly opened Chrome window, navigate to LinkedIn and ensure you are logged in. **Leave this window open.**
 
-### Step 3: Run the MCP Server
-Start the FastMCP server so your AI Agent can connect:
-
-```bash
-uv run fastmcp dev src/linkedin_cv_updater/server.py
-```
-
-Or, add it to your IDE's MCP Configuration:
+### Step 3: Configure your IDE
+Add the server to your IDE's MCP Configuration file (`mcp_config.json`):
 
 ```json
 {
   "mcpServers": {
     "linkedin-cv-updater": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/path/to/linkedin-cv-updater",
-        "run",
-        "fastmcp",
-        "run",
-        "src/linkedin_cv_updater/server.py"
-      ],
+      "command": "linkedin-cv-updater",
+      "args": [],
       "env": {
         "LINKEDIN_PROFILE_ID": "your-profile-id"
       }
@@ -81,6 +63,8 @@ Or, add it to your IDE's MCP Configuration:
   }
 }
 ```
+
+Once you restart your IDE, the server will launch seamlessly in the background and its tools will be available to your Agent!
 
 ## 🧠 Features & Prompts
 
