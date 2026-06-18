@@ -73,18 +73,18 @@ Add the server to your IDE's MCP Configuration file (`mcp_config.json`):
 ### Step 4: Trigger Your IDE Agent
 Once configured and restarted, paste this simple, natural language prompt into your IDE agent to trigger the entire end-to-end flow autonomously:
 
-> *"Act as my career manager. Extract my technical achievements and the company name from this repository, fetch my current LinkedIn bio, and push formatted updates to both my LinkedIn Experience and About sections."*
+> *"Act as my career manager. Extract my technical achievements and the company name from this repository, fetch my current LinkedIn bio, and push formatted updates to both my LinkedIn Experience and About sections. Finally, export my profile as a PDF CV."*
 
 Or even simpler:
-> *"Extract my project highlights and update my LinkedIn experience and bio."*
+> *"Extract my project highlights, update my LinkedIn experience and bio, and save my profile as a PDF."*
 
 Because FastMCP tools are self-describing, your Agent will automatically discover and string together all the necessary prompts and tools to complete the task. Sit back and watch the browser automate the updates!
 
 ## 🧠 Features & Prompts
 
 This server exposes several Tools and Prompts:
-- **Tools**: `update_linkedin_experience`, `update_linkedin_about`
-- **Prompts**: `extract_project_highlights`, `format_linkedin_content`
+- **Tools**: `update_linkedin_experience`, `update_linkedin_about`, `export_linkedin_pdf`
+- **Prompts**: `extract_project_highlights`, `format_linkedin_content`, `extract_company_name`
 
 Your Agent is instructed to use the prompts to extract your technical achievements from your local codebase *before* utilizing the tools to type them into LinkedIn.
 

@@ -11,6 +11,7 @@ mcp = FastMCP("linkedin-cv-updater")
 import linkedin_cv_updater.tools.update_experience
 import linkedin_cv_updater.tools.update_about
 import linkedin_cv_updater.tools.get_about
+import linkedin_cv_updater.tools.export_pdf
 
 @mcp.prompt()
 def format_linkedin_content(role_description: str = None, about_summary: str = None) -> str:

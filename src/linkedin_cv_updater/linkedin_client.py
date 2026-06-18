@@ -271,3 +271,52 @@ class LinkedinClient:
             except Exception as e:
                 logger.error(f"CDP UI Automation failed: {e}")
                 return f"ERROR: Automation failed. Details: {e}"
+
+    def export_pdf(self, output_filename: str) -> str:
+        logger.info(f"Connecting to Chrome via CDP at {self.cdp_url} to export PDF")
+
+        with sync_playwright() as p:
+            try:
+                browser = p.chromium.connect_over_cdp(self.cdp_url)
+                linkedin_page = self._get_or_create_linkedin_page(browser)
+
+                # Navigate to the profile page
+                profile_id = os.getenv("LINKEDIN_PROFILE_ID", "me")
+                logger.info(f"Navigating to LinkedIn Profile page for {profile_id}...")
+                linkedin_page.goto(f"https://www.linkedin.com/in/{profile_id}/", wait_until="domcontentloaded")
+                linkedin_page.wait_for_timeout(4000)
+
+                # Scroll to the top of the page to avoid sticky notification headers overlapping the buttons
+                logger.info("Scrolling to top of the page...")
+                linkedin_page.evaluate("window.scrollTo(0, 0)")
+                linkedin_page.wait_for_timeout(1000)
+
+                # Click the More button natively via JS to completely bypass any sticky headers or scrolling issues
+                logger.info("Clicking 'More' button...")
+                more_btn = linkedin_page.locator("button[aria-label='More']").first
+                if more_btn.is_visible():
+                    more_btn.evaluate("node => node.click()")
+                    linkedin_page.wait_for_timeout(2000)
+                else:
+                    return "ERROR: Could not find the 'More' button."
+
+                # Intercept the download and click Save to PDF
+                logger.info("Clicking 'Save to PDF' and waiting for download...")
+                with linkedin_page.expect_download(timeout=30000) as download_info:
+                    save_pdf_btn = linkedin_page.locator("div[role='menuitem'], div[data-tabindex='0']").filter(has_text="Save to PDF").first
+                    if not save_pdf_btn.is_visible():
+                         save_pdf_btn = linkedin_page.get_by_text("Save to PDF").first
+                         
+                    if save_pdf_btn.is_visible():
+                        save_pdf_btn.evaluate("node => node.click()")
+                    else:
+                        return "ERROR: Could not find 'Save to PDF' option."
+
+                download = download_info.value
+                download.save_as(output_filename)
+                logger.info(f"PDF successfully saved to {output_filename}")
+                return "SUCCESS"
+
+            except Exception as e:
+                logger.error(f"CDP UI Automation failed while exporting PDF: {e}")
+                return f"ERROR: Automation failed. Details: {e}"
