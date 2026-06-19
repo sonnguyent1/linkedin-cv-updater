@@ -11,6 +11,11 @@ logger = get_logger(__name__)
 class GenerateCV(BaseModel):
     markdown_content: str = Field(..., description="The highly formatted, beautified markdown text for the CV.")
     output_filename: str = Field("beautified_cv.pdf", description="The local file path where the generated PDF will be saved.")
+    primary_color: str = Field("#0f172a", description="Hex code for the primary color (used for headings and strong text).")
+    secondary_color: str = Field("#334155", description="Hex code for the secondary color (used for subtext and bullets).")
+    accent_color: str = Field("#2563eb", description="Hex code for the accent color (used for subheadings and links).")
+    bg_color: str = Field("#ffffff", description="Hex code for the background color.")
+    text_color: str = Field("#1e293b", description="Hex code for the main body text color.")
 
 @mcp.tool()
 def generate_beautiful_cv(params: GenerateCV) -> str:
@@ -38,11 +43,11 @@ def generate_beautiful_cv(params: GenerateCV) -> str:
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <style>
             :root {{
-                --primary-color: #0f172a;
-                --secondary-color: #334155;
-                --accent-color: #2563eb;
-                --bg-color: #ffffff;
-                --text-color: #1e293b;
+                --primary-color: {params.primary_color};
+                --secondary-color: {params.secondary_color};
+                --accent-color: {params.accent_color};
+                --bg-color: {params.bg_color};
+                --text-color: {params.text_color};
                 --border-color: #e2e8f0;
             }}
             body {{
