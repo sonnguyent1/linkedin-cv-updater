@@ -19,8 +19,8 @@ def export_linkedin_pdf(params: ExportPDF) -> str:
     User must have Chrome running with --remote-debugging-port=9222.
     
     IMPORTANT INSTRUCTIONS FOR AGENT:
-    Call this tool as the very last step after you have finished updating the user's LinkedIn Experience and About sections.
-    This generates the final physical CV artifact for the user.
+    If the user requests CV beautification, use this tool to fetch the raw data first, then read the resulting PDF, apply formatting, and pass it to `generate_beautiful_cv`.
+    If the user only wants the raw LinkedIn export, simply call this tool as the final step.
     """
     output_path = os.path.abspath(params.output_filename)
     logger.info(f"Exporting LinkedIn Profile PDF to: {output_path}")

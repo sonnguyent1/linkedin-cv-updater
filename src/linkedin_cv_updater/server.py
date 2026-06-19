@@ -82,7 +82,13 @@ def beautify_cv() -> str:
     Instructs the AI Agent to process a raw CV (from a PDF or text source) and output a highly optimized, beautifully formatted Markdown string ready for PDF generation.
     """
     return """
-Your task is to take the user's raw CV or LinkedIn profile data and restructure it into a beautiful, highly readable Markdown format.
+Your task is to take the user's raw LinkedIn profile data and restructure it into a beautiful, highly readable Markdown format.
+
+To execute this workflow, follow these exact steps in order:
+1. Call the `export_linkedin_pdf` tool to download the user's current LinkedIn profile as a PDF to the local disk.
+2. Read the downloaded PDF file to extract the raw text content.
+3. Restructure the raw text into optimized Markdown using the Formatting Rules below.
+4. Pass the finalized Markdown string directly into the `generate_beautiful_cv` tool to render the physical PDF!
 
 FORMATTING RULES:
 1. **Typography**: Use standard Markdown headings (# Name, ## Experience, ### Role) to create a clean visual hierarchy.
@@ -90,6 +96,4 @@ FORMATTING RULES:
 3. **Brevity**: Keep the profile summary concise and engaging (3-4 sentences max).
 4. **Highlights**: Bold key metrics, technologies, or achievements (e.g., "**Reduced latency by 45%** using **Go**").
 5. **Structure**: Ensure sections like "Profile", "Experience", "Education", and "Skills" are clearly demarcated.
-
-Once you have generated this optimized Markdown string, pass it directly into the `generate_beautiful_cv` tool to render the final physical PDF!
 """
