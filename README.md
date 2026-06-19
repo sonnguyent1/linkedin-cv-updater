@@ -21,13 +21,13 @@ This means:
 
 Since this project is packaged and distributed via GitHub Actions, the fastest way to install it is using the pre-compiled release binaries (wheel files) from the Releases page.
 
-**Install the latest pre-compiled release (v0.2.1):**
+**Install the latest pre-compiled release (v0.2.2):**
 ```bash
-uv tool install https://github.com/sonnguyent1/linkedin-cv-updater/releases/download/v0.2.1/linkedin_cv_updater_mcp-0.2.1-py3-none-any.whl
+uv tool install https://github.com/sonnguyent1/linkedin-cv-updater/releases/download/v0.2.2/linkedin_cv_updater_mcp-0.2.2-py3-none-any.whl
 ```
 *or using pipx:*
 ```bash
-pipx install https://github.com/sonnguyent1/linkedin-cv-updater/releases/download/v0.2.1/linkedin_cv_updater_mcp-0.2.1-py3-none-any.whl
+pipx install https://github.com/sonnguyent1/linkedin-cv-updater/releases/download/v0.2.2/linkedin_cv_updater_mcp-0.2.2-py3-none-any.whl
 ```
 
 **Alternatively, install directly from the repository source:**
