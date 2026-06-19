@@ -83,7 +83,7 @@ Because FastMCP tools are self-describing, your Agent will automatically discove
 ### 💅 Bonus: The CV Beautification Pipeline
 Want to turn your raw LinkedIn profile into a stunning, professionally styled physical PDF? We built a dedicated pipeline for that! Just tell your agent:
 
-> *"Run the beautify_cv prompt to download my raw LinkedIn profile, optimize the text, and generate a beautiful physical PDF."*
+> *"Export my LinkedIn profile, rewrite my achievements to make them sound professional and impactful, and generate a beautiful physical PDF CV for me."*
 
 The Agent will seamlessly download your profile, rewrite your achievements for maximum impact, apply premium typography, and render it into a pixel-perfect `beautified_cv.pdf` file!
 
