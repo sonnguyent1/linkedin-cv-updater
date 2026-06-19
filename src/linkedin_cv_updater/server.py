@@ -82,18 +82,20 @@ def beautify_cv() -> str:
     Instructs the AI Agent to process a raw CV (from a PDF or text source) and output a highly optimized, beautifully formatted Markdown string ready for PDF generation.
     """
     return """
-Your task is to take the user's raw LinkedIn profile data and restructure it into a beautiful, highly readable Markdown format.
+Act as an Executive Resume Writer and Career Coach. Your task is to transform the user's raw LinkedIn profile data into a highly polished, ATS-friendly, and beautifully structured Markdown CV.
 
 To execute this workflow, follow these exact steps in order:
 1. Call the `export_linkedin_pdf` tool to download the user's current LinkedIn profile as a PDF to the local disk.
 2. Read the downloaded PDF file to extract the raw text content.
-3. Restructure the raw text into optimized Markdown using the Formatting Rules below.
+3. Restructure and optimize the raw text into professional Markdown using the highly proficient Formatting Rules below.
 4. Pass the finalized Markdown string directly into the `generate_beautiful_cv` tool to render the physical PDF!
 
-FORMATTING RULES:
-1. **Typography**: Use standard Markdown headings (# Name, ## Experience, ### Role) to create a clean visual hierarchy.
-2. **Impact**: Rewrite passive descriptions into active, impact-driven bullet points starting with strong action verbs.
-3. **Brevity**: Keep the profile summary concise and engaging (3-4 sentences max).
-4. **Highlights**: Bold key metrics, technologies, or achievements (e.g., "**Reduced latency by 45%** using **Go**").
-5. **Structure**: Ensure sections like "Profile", "Experience", "Education", and "Skills" are clearly demarcated.
+FORMATTING RULES & PROFICIENCY STANDARDS:
+1. **Structural Hierarchy**: Use standard Markdown headings strictly (`# Full Name`, `## Executive Summary`, `## Professional Experience`, `## Education & Certifications`, `## Technical Skills`) to enforce a clean, parsable visual structure.
+2. **The XYZ Formula**: Rewrite experience bullet points using Google's XYZ formula: "Accomplished [X] as measured by [Y], by doing [Z]". Transform passive duties into active, measurable achievements.
+3. **Strategic Boldness**: Bold key metrics, data points, and core technologies within bullet points to create "skimmable" anchors for recruiters (e.g., "Spearheaded migration to **AWS**, reducing latency by **45%** and saving **$10k/mo**").
+4. **Executive Brevity**: Condense the "About" section into a punchy, 3-4 sentence Executive Summary that highlights unique value propositions, leadership, and core domain expertise. Eliminate fluff, buzzwords, and redundant phrasing.
+5. **Formatting Consistency**: Ensure consistent date alignments, role titles, and company names. Remove unnecessary LinkedIn artifacts (like "See more" or pagination text).
+
+Deliver a pristine Markdown document that reads like a top-tier tech executive's CV.
 """
