@@ -92,10 +92,11 @@ To execute this workflow, follow these exact steps in order:
 
 FORMATTING RULES & PROFICIENCY STANDARDS:
 1. **Structural Hierarchy**: Use standard Markdown headings strictly (`# Full Name`, `## Executive Summary`, `## Professional Experience`, `## Education & Certifications`, `## Technical Skills`) to enforce a clean, parsable visual structure.
-2. **The XYZ Formula**: Rewrite experience bullet points using Google's XYZ formula: "Accomplished [X] as measured by [Y], by doing [Z]". Transform passive duties into active, measurable achievements.
-3. **Strategic Boldness**: Bold key metrics, data points, and core technologies within bullet points to create "skimmable" anchors for recruiters (e.g., "Spearheaded migration to **AWS**, reducing latency by **45%** and saving **$10k/mo**").
-4. **Executive Brevity**: Condense the "About" section into a punchy, 3-4 sentence Executive Summary that highlights unique value propositions, leadership, and core domain expertise. Eliminate fluff, buzzwords, and redundant phrasing.
-5. **Formatting Consistency**: Ensure consistent date alignments, role titles, and company names. Remove unnecessary LinkedIn artifacts (like "See more" or pagination text).
+2. **Contact Information**: You MUST extract and prominently display the user's Contact Information (Email, LinkedIn URL, GitHub, Location, Phone if available) immediately below the `# Full Name` heading.
+3. **The XYZ Formula**: Rewrite experience bullet points using Google's XYZ formula: "Accomplished [X] as measured by [Y], by doing [Z]". Transform passive duties into active, measurable achievements.
+4. **Strategic Boldness**: Bold key metrics, data points, and core technologies within bullet points to create "skimmable" anchors for recruiters (e.g., "Spearheaded migration to **AWS**, reducing latency by **45%** and saving **$10k/mo**").
+5. **Executive Brevity**: Condense the "About" section into a punchy, 3-4 sentence Executive Summary that highlights unique value propositions, leadership, and core domain expertise. Eliminate fluff, buzzwords, and redundant phrasing.
+6. **Formatting Consistency**: Ensure consistent date alignments, role titles, and company names. Remove unnecessary LinkedIn artifacts (like "See more" or pagination text).
 
 Deliver a pristine Markdown document that reads like a top-tier tech executive's CV.
 """
