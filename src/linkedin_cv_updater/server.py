@@ -75,3 +75,21 @@ Provide your findings in the following format:
 - Confidence Score: [Low / Medium / High]
 - Supporting Evidence: [List the exact file paths and the specific lines of text/code discovered]
 """
+
+@mcp.prompt()
+def beautify_cv() -> str:
+    """
+    Instructs the AI Agent to process a raw CV (from a PDF or text source) and output a highly optimized, beautifully formatted Markdown string ready for PDF generation.
+    """
+    return """
+Your task is to take the user's raw CV or LinkedIn profile data and restructure it into a beautiful, highly readable Markdown format.
+
+FORMATTING RULES:
+1. **Typography**: Use standard Markdown headings (# Name, ## Experience, ### Role) to create a clean visual hierarchy.
+2. **Impact**: Rewrite passive descriptions into active, impact-driven bullet points starting with strong action verbs.
+3. **Brevity**: Keep the profile summary concise and engaging (3-4 sentences max).
+4. **Highlights**: Bold key metrics, technologies, or achievements (e.g., "**Reduced latency by 45%** using **Go**").
+5. **Structure**: Ensure sections like "Profile", "Experience", "Education", and "Skills" are clearly demarcated.
+
+Once you have generated this optimized Markdown string, pass it directly into the `generate_beautiful_cv` tool to render the final physical PDF!
+"""

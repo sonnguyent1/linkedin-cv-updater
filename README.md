@@ -84,7 +84,7 @@ Because FastMCP tools are self-describing, your Agent will automatically discove
 
 This server exposes several Tools and Prompts:
 - **Tools**: `update_linkedin_experience`, `update_linkedin_about`, `export_linkedin_pdf`, `generate_beautiful_cv`
-- **Prompts**: `extract_project_highlights`, `format_linkedin_content`, `extract_company_name`
+- **Prompts**: `extract_project_highlights`, `format_linkedin_content`, `extract_company_name`, `beautify_cv`
 
 Your Agent is instructed to use the prompts to extract your technical achievements from your local codebase *before* utilizing the tools to type them into LinkedIn.
 
